@@ -1,5 +1,5 @@
 Package: meg.megsystem.copypasta
-Section: tweak
+Section: Tweaks
 Maintainer: Litten
 Architecture: iphoneos-arm
 Version: 1.0
@@ -12,3 +12,4 @@ SHA256: 373134ef1d2257cfc39c2d94d4f2b24e30f6a116df2fe8da3bc2a053c1552eb3
 Description: CopyPasta by Litten
 Name: CopyPasta
 Author: Litten, Reposted by MegSystem
+Icon: https://megsystem.github.io/avatar.jpg
