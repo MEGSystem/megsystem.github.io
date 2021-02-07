@@ -1,0 +1,14 @@
+Package: meg.megsystem.copypasta
+Section: tweak
+Maintainer: Litten
+Architecture: iphoneos-arm
+Version: 1.0
+Depends: mobilesubstrate
+Filename: debs/meg.megsystem.copypasta_1.2.2_iphoneos-arm.deb
+Size: 207
+MD5sum: 2e50c5c2887a9408cc6bb80e8ae89eaf
+SHA1: 9f92c21b39f68a6a33b4c15a342ed7c470b9576d
+SHA256: 373134ef1d2257cfc39c2d94d4f2b24e30f6a116df2fe8da3bc2a053c1552eb3
+Description: CopyPasta by Litten
+Name: CopyPasta
+Author: Litten, Reposted by MegSystem
