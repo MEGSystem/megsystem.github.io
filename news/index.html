@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="home">
+	<head>
+		<!-- <meta name="google-assets-verification" content="V91Xt8plPRa56Ej5hb6vSuOGjFA7dTmdTfQYUMaDgqU"/>-->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Giovanni Jailbreak Info</title>
+
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="/giovanni.jpg"/>
+		<link rel="apple-touch-icon" href="/giovanni.jpg"/>
+		<link rel="icon" type="image/png" sizes="180x180" href="/giovanni.jpg"/>
+		<!--<link rel="manifest" href="https://theodyssey.dev/assets/images/manifest.json" />
+		<meta name="msapplication-TileColor" content="#cf86fa" />
+		<meta name="msapplication-TileImage" content="https://theodyssey.dev/assets/images/icon.png"/>-->
+		<meta name="theme-color" content="#fff" />
+		<meta name="msapplication-TileColor" content="#fff" />
+		<meta name="msapplication-TileColor" content="#fff" />
+		<!-- Favicons  -->
+
+		<!-- Primary Meta Tags -->
+		<title>Giovanni Jailbreak Info</title>
+		<meta name="title" content="Giovanni Jailbreak Info" />
+		<meta name="description" content="Giovanni Jailbreak Info" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="webassets" />
+		<meta property="og:url" content="https://jailbreakinfostore.000webhostapp.com/" />
+		<meta property="og:title" content="Giovanni Jailbreak Info" />
+		<meta property="og:description" content="Giovanni Jailbreak Info"/>
+		<meta property="og:image" content="https://jailbreakinfostore.000webhostapp.com/giovanni.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://jailbreakinfostore.000webhostapp.com/" />
+		<meta property="twitter:title" content="Giovanni Jailbreak Info" />
+		<meta property="twitter:description" content="Giovanni Jailbreak Info"/>
+		<meta property="twitter:image" content="https://jailbreakinfostore.000webhostapp.com/giovanni.jpg"/>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- Bootstrap -->
+		<script src="https://kit.fontawesome.com/3e816b0875.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA==" crossorigin="anonymous"></script>
+		<script src="https://theodyssey.dev/assets/js/main.js"></script> 
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://theodyssey.dev/assets/css/styles.css" />
+<script>
+
+
+var works_min = 13.7
+var works_max = 14.2
+
+
+var expandingAnimationTiming = 400;
+var collapsingAnimationTiming = 200;
+
+/* Extends jQuery animate easing */
+$.easing = Object.assign({}, $.easing, {
+  easeOutBack: function(x, t, b, c, d, s) {
+    if (s == undefined) s = 1.70158;
+    return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
+  }
+});
+
+/* Function to expand cards */
+function expandElement(elementToExpand) {
+  // Adds class 'open' to help with styling
+  elementToExpand.parents(".card").addClass("open");
+
+  // Prevents 'body' scroll
+  $("body").addClass("lock");
+
+  // freeze the current scroll position of the background page expand-wrapper
+  var elementOffset = $(".list-wrapper").offset();
+  var elementScrollTop = $("body").scrollTop();
+  var netOffset = elementOffset.top - elementScrollTop;
+  var expandPosition = $(".list-wrapper").offset();
+  var expandTop = expandPosition.top;
+  var expandLeft = expandPosition.left;
+  var expandWidth = $(".list-wrapper").outerWidth();
+  var expandHeight = $(".list-wrapper").outerHeight();
+
+  $(".list-wrapper").css({
+    top: netOffset,
+    position: "fixed",
+    overflow: "hidden",
+    "z-index": "11"
+  });
+
+  // convert the expand-item to fixed position without moving it
+  elementToExpand.css({
+    top: elementToExpand.offset().top - $("body").scrollTop(),
+    left: elementToExpand.offset().left,
+    height: elementToExpand.height(),
+    width: elementToExpand.width(),
+    "max-width": expandWidth,
+    position: "fixed"
+  });
+  
+  // Changes height of banner
+  var expandedHeight = elementToExpand.find(".banner").data("height-expanded");
+  elementToExpand.find(".banner").animate(
+    {
+      height: expandedHeight
+    },
+    expandingAnimationTiming,
+    "easeOutBack"
+  );
+  
+  // Changes position of content
+  var expandedPosition = elementToExpand
+    .find(".inner-content")
+    .data("position-expanded");
+  elementToExpand.find(".inner-content").animate(
+    {
+      top: expandedPosition
+    },
+    expandingAnimationTiming,
+    "easeOutBack"
+  );
+
+  // start expand-item animation to the expand wrapper
+  // expand the element with class .about-tile-bg-image
+  elementToExpand.animate(
+    {
+      left: expandLeft,
+      top: expandTop,
+      height: expandHeight,
+      width: expandWidth,
+      "max-width": expandWidth
+    },
+    expandingAnimationTiming, // animation timing in millisecs
+    "easeOutBack", //animation easing
+    function() {
+      elementToExpand.css({
+        right: 0,
+        bottom: 0,
+        width: "auto",
+        height: "auto"
+      });
+
+      elementToExpand.find(".banner-holder").css({
+        position: "fixed"
+      });
+    }
+  );
+}
+
+/* Function to collapse cards */
+function collapseElement(collapseButton) {
+  // find the element to collapse
+  var elementToCollpseParent = collapseButton.parents(".card");
+  var elementToCollpse = elementToCollpseParent.find(".card-content");
+  
+  // find the location of the placeholder
+  var elementToCollpsePlaceholder = elementToCollpse.parents(".card");
+  var elementToCollpsePlaceholderTop =
+    elementToCollpsePlaceholder.offset().top - $("body").scrollTop();
+  var elementToCollpsePlaceholderLeft = elementToCollpsePlaceholder.offset()
+    .left;
+  var elementToCollpsePlaceholderHeight = elementToCollpsePlaceholder.outerHeight();
+  var elementToCollpsePlaceholderWidth = elementToCollpsePlaceholder.outerWidth();
+
+  elementToCollpse.find(".banner-holder").css({
+    position: "absolute"
+  });
+
+  // convert the width and height to numeric values
+  elementToCollpse.css({
+    right: "auto",
+    bottom: "auto",
+    width: elementToCollpse.outerWidth(),
+    height: elementToCollpse.outerHeight()
+  });
+
+  $(".list-wrapper").css({
+    top: 0,
+    position: "absolute",
+    overflow: "auto",
+    "z-index": "1"
+  });
+  
+  // Changes height of banner
+  var collapsedHeight = elementToCollpse.find(".banner").data("height");
+  elementToCollpse.find(".banner").animate(
+    {
+      height: collapsedHeight
+    },
+    collapsingAnimationTiming,
+    "linear"
+  );
+  
+  // Changes position of content
+  var collapsedPosition = elementToCollpse
+    .find(".inner-content")
+    .data("position");
+  elementToCollpse.find(".inner-content").animate(
+    {
+      top: collapsedPosition
+    },
+    collapsingAnimationTiming,
+    "linear"
+  );
+
+  elementToCollpse.animate(
+    {
+      left: elementToCollpsePlaceholderLeft,
+      top: elementToCollpsePlaceholderTop,
+      height: elementToCollpsePlaceholderHeight,
+      width: elementToCollpsePlaceholderWidth
+    },
+    collapsingAnimationTiming, // animation timing in millisecs
+    "linear", //animation easing
+    function() {
+      // Removes class 'open'
+      elementToCollpseParent.removeClass("open");
+
+      elementToCollpse.css({
+        position: "relative",
+        top: "auto",
+        left: "auto",
+        width: "100%",
+        height: "100%"
+      });
+    }
+  );
+
+  // Stops preventing 'body' scroll
+  $("body").removeClass("lock");
+}
+
+function setCardHeight() {
+  $(".card ").each(function(index, element) {
+    var slideHeight = $(element)
+      .find(".banner-holder")
+      .outerHeight();
+    var containerHeight = $(element)
+      .find(".inner-content")
+      .outerHeight();
+    var contentHeight = slideHeight + containerHeight;
+
+    $(element).css({
+      height: contentHeight
+    });
+  });
+}
+
+function attachListeners() {
+  $(document)
+    .on("click", ".card-content", function() {
+      if (
+        $(this)
+          .parents(".card")
+          .hasClass("open")
+      ) {
+        return;
+      }
+      expandElement($(this));
+    })
+    .on("click", ".card .close-btn", function(event) {
+      event.stopPropagation();
+      collapseElement($(this));
+    })
+    .on('touchstart', '.card', function() {
+      $(this).addClass('hover');
+    })
+    .on('touchend touchmove touchcancel', '.card', function() {
+      $(this).removeClass('hover');
+    });
+}
+
+function initialiseCards() {
+  attachListeners();
+  setCardHeight();
+}
+
+initialiseCards();
+
+//alert(parseFloat(("" + (/CPU.*OS ([0-9_]{1,})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0, ""])[1]).replace("undefined", "3_2").replace("_", ".").replace("_", "")));
+
+
+</script>	
+
+</head>
+	<body>
+<style>
+*.lock {
+  overflow: hidden;
+}
+
+.list-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.cards-list {
+  position: relative;
+  padding: 15px 15px 20px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom)); /* For iPhone X */
+  max-width: 400px;
+  margin: auto;
+}
+
+.card {
+  position: relative;
+  height: 45vh;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+  opacity: 1;
+  margin-bottom: 40px;
+}
+
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{ display: none; }
+
+.card.open {
+    border-radius: 0;
+}
+
+.card.hover,
+.card:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  transition: border-radius 0.15s ease;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.card.open .card-content {
+    z-index: 500 !important;
+    background: #fff;
+    border-radius: 0px;
+    cursor: default;
+}
+
+.banner-holder {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  position: relative;
+  height: 20vh;
+  width: 100%;
+  padding: 15px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card.open .banner {
+  height: 45vh;
+  border-radius: 0;
+}
+
+.content-holder {
+  max-width: 600px;
+  padding: 0;
+  z-index: 1;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.card.open .content-holder {
+  overflow: auto;
+}
+
+.inner-content {
+  top: 20vh;
+  padding: 20px;
+  position: relative;
+  background-color: #fff;
+}
+
+.card.open .inner-content {
+  top: 40vh;
+  padding-bottom: env(safe-area-inset-bottom); /* for iPhone X */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.info-holder {
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.date-category {
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 0;
+  flex: 1;
+  margin: 0 1.4rem 0 0;
+}
+
+.like-wrapper {
+  position: relative;
+  cursor: pointer;
+  padding-left: 40px;
+  color: red;
+}
+
+.like-wrapper .fa{
+  opacity: 0.3;
+  color: blue;
+}
+
+.bookmark-wrapper .fa {
+  opacity: 0.3;
+}
+
+.like-wrapper.btn-liked .fa {
+  opacity: 1;
+  color: red;
+}
+
+.like-wrapper span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: right;
+  opacity: 0.3;
+  width: 35px;
+  line-height: 24px;
+  font-size: 12px;
+}
+
+.bookmark-wrapper {
+  margin-left: 8px;
+  width: 24px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.title {
+  position: relative;
+  margin: 10px 0 20px 0;
+  font-weight: bold;
+  color: #000;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.6;
+  color: #000;
+}
+
+.card:not(.open) .description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 4.2em;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 28px;
+  width: 28px;
+  line-height: 27px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-in-out;
+}
+
+.card.open .close-btn {
+    z-index: 600;
+    opacity: 0.9;
+    visibility: visible;
+}
+
+html{
+   background: #fff;
+}
+
+</style>
+<!--background-image: url("https://i.pinimg.com/originals/6f/3e/1e/6f3e1e6daf32bd60a507ccb37f26d37d.jpg");-->
+		<div class="list-wrapper">
+  <div class="cards-list">
+          <div class="card">
+      <div class="card-content">
+        <div class="banner-holder">
+          <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('/giovanni.jpg')"></div>
+        </div>
+        <div class="container-fluid content-holder">
+          <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+            <div class="info-holder">
+              <div class="date-category">Dicembre 8 2020 / Release</div>
+              <div class="like-wrapper">
+                <i class="fa fa-heart fa-lg"></i> <span class="count"></span>
+              </div>
+              <div class="bookmark-wrapper btn-bookmark"><i class="fa fa-bookmark-o fa-lg"></i></div>
+            </div>
+            <h2 class="title">Site Updated</h2>
+            <div class="description">
+            <p id="ios_version_id" style="color:red">Can't identify your ios verison :(</p>
+              <p>Site Updated by Giovanni at 12:58 on 08/12/2020</p>
+              <p>Site Published by Giovanni officially on 07/12/2020 at 21:00</p>
+              <p>This Site was made to show the latest releases of JailBreak</p>
+              <!--<p>Highlighted changes: Adds an on-device alert to indicate checkra1n’s Safe Mode is active - Adds support for iBridge SSH from the same host - Partial support for the original HomePod (CLI only, tested to work with audioOS 13 and 14)</p>
+              <p>Bug Fixes: Fixes an issue that would often cause Safe Mode to be entered on iOS 14.2 regardless of whether the user requested it or not - Safe Mode no longer loads 3rd-party LaunchDaemons - NVRAM is now unlocked on iOS 14.2 as well - Fixes an issue where jailbreaking an AppleTV fail on fresh tvOS installations - The bundled dd binary now has the entitlement required to access block devices - Fixes multiple memory leaks in early-boot binaries - Changes some GUI internals that should reduce the chance of exploit failure and GUI hiccups</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="close-btn"><i class="fa fa-times"></i></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="banner-holder">
+          <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('https://www.italiamac.it/wp-content/uploads/2019/11/Schermata-2019-11-11-alle-18.46.32.jpg')"></div>
+        </div>
+        <div class="container-fluid content-holder">
+          <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+            <div class="info-holder">
+              <div class="date-category">Dicembre 7 2020 / Jailbreak</div>
+              <div class="like-wrapper btn-like">
+                <i class="fa fa-heart fa-lg"></i> <span class="count"></span>
+              </div>
+              <div class="bookmark-wrapper btn-bookmark"><i class="fa fa-bookmark-o fa-lg"></i></div>
+            </div>
+            <h2 class="title">CheckRa1n</h2>
+            <div class="description">
+            <p id="checkrain_id" style="color:red">Can't identify your ios verison :(</p>
+              <p>Checkra1n is a semi-tethered jailbreak, developed primarily by Luca Todesco (qwertyoruiop). It's based on the checkm8 bootrom exploit released by axi0mX</p>
+              <p>Checkra1n supports iOS 12.0 and newer, iPadOS 13.1 and newer, and tvOS 12.0 and newer. Experimental support was added in 0.9.9 for the T2 processor. Partial support for HomePod was added in 0.12.1 beta.</p>
+              <p>Highlighted changes: Adds an on-device alert to indicate checkra1n’s Safe Mode is active - Adds support for iBridge SSH from the same host - Partial support for the original HomePod (CLI only, tested to work with audioOS 13 and 14)</p>
+              <p>Bug Fixes: Fixes an issue that would often cause Safe Mode to be entered on iOS 14.2 regardless of whether the user requested it or not - Safe Mode no longer loads 3rd-party LaunchDaemons - NVRAM is now unlocked on iOS 14.2 as well - Fixes an issue where jailbreaking an AppleTV fail on fresh tvOS installations - The bundled dd binary now has the entitlement required to access block devices - Fixes multiple memory leaks in early-boot binaries - Changes some GUI internals that should reduce the chance of exploit failure and GUI hiccups</p>
+            </div>
+          </div>
+        </div>
+        <div class="close-btn"><i class="fa fa-times"></i></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="banner-holder">
+          <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('https://media.idownloadblog.com/wp-content/uploads/2019/06/Chimera-thumb-header-chimeratv.png')"></div>
+        </div>
+        <div class="container-fluid content-holder">
+          <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+            <div class="info-holder">
+              <div class="date-category">Dicembre 7 2020 / Jailbreak</div>
+              <div class="like-wrapper btn-like">
+                <i class="fa fa-heart fa-lg"></i> <span class="count"></span>
+              </div>
+              <div class="bookmark-wrapper btn-bookmark"><i class="fa fa-bookmark-o fa-lg"></i></div>
+            </div>
+            <h2 class="title">Chimera</h2>
+            <div class="description">
+                <p id="chimera_id" style="color:red">Can't identify your ios verison :(</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+          </div>
+        </div>
+        <div class="close-btn"><i class="fa fa-times"></i></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="banner-holder">
+          <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('https://ioshacker.com/wp-content/uploads/2020/07/Odyssey-jailbreak-400x240.jpg')"></div>
+        </div>
+        <div class="container-fluid content-holder">
+          <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+            <div class="info-holder">
+              <div class="date-category">Dicembre 7 2020 / Jailbreak</div>
+              <div class="like-wrapper btn-like">
+                <i class="fa fa-heart-o fa-lg"></i> <span class="count"></span>
+              </div>
+              <div class="bookmark-wrapper btn-bookmark"><i class="fa fa-bookmark-o fa-lg"></i></div>
+            </div>
+            <h2 class="title">Odyssey</h2>
+            <div class="description">
+                <p id="odyssey_id" style="color:red">Can't identify your ios verison :(</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+          </div>
+        </div>
+        <div class="close-btn"><i class="fa fa-times"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Shitty detector of if you device is compatible fuck you */
+
+function iOSversion() {
+  if (/iP(hone|od|ad)/.test(navigator.platform)) {
+    //supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+    return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+  }
+}
+
+let currentiOS = parseFloat(("" + (/CPU.*OS ([0-9_]{1,})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0, ""])[1]).replace("undefined", "3_2").replace("_", ".").replace("_", ""));
+
+ios_ver = iOSversion();
+let ios_version = document.getElementById("ios_version_id");
+//alert(ios_ver)
+
+//ios_version.innerHTML = "You are on iOS " + currentiOS + ".";
+//ios_version.style.color = "green";
+
+if (ios_ver[0] == 'undefined'){
+    //nothing special
+} else {
+    ios_version.innerHTML = "You are on iOS " + currentiOS;
+    ios_version.style.color = "green";
+}
+
+
+
+checkrain_ver = iOSversion();
+let checkrain = document.getElementById("checkrain_id");
+//alert(ver)
+if (checkrain_ver[0] >= 12) {
+    //alert('This is working');
+    checkrain.innerHTML = "CheckRa1n work on your ios version";
+    checkrain.style.color = "green";
+} else {
+     //alert('Not working');
+    checkrain.innerHTML = "CheckRa1n doesn't work on your ios version";
+    checkrain.style.color = "red";
+    //text_container.style.backgroundColor = "lightgreen";
+    //text_container.style.border = "1px solid green";
+}
+
+chimera_ver = iOSversion();
+let chimera = document.getElementById("chimera_id");
+//alert(ver)
+if (chimera_ver[0] == 12) {
+    //alert('This is working');
+    chimera.innerHTML = "Chimera work on your ios version";
+    chimera.style.color = "green";
+} else {
+     //alert('Not working');
+    chimera.innerHTML = "Chimera doesn't work on your ios version";
+    chimera.style.color = "red";
+    //text_container.style.backgroundColor = "lightgreen";
+    //text_container.style.border = "1px solid green";
+}
+
+odyssey_ver = iOSversion();
+let odyssey = document.getElementById("odyssey_id");
+//alert(ver)
+if (odyssey_ver[0] == 13) {
+    //alert('This is working');
+    odyssey.innerHTML = "Odessey work on your ios version";
+    odyssey.style.color = "green";
+} else {
+     //alert('Not working');
+    odyssey.innerHTML = "Odessey doesn't work on your ios version";
+    odyssey.style.color = "red";
+    //text_container.style.backgroundColor = "lightgreen";
+    //text_container.style.border = "1px solid green";
+}
+</script>
+</body>
+</html>
